@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiner</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            height: 100vh;
+            margin: 0;
+            
+        }
+        .spiner{
+            background-color: rgb(189, 181, 178);
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            border: 25px solid white;
+            border-top: 20px dashed indigo;
+            text-align: center;
+            animation: ani 3s linear infinite;
+            
+           
+           
+        }
+        @keyframes ani {
+            to{
+                transform: rotate(360deg);
+                
+            }
+            
+        }
+        h3{
+            
+            text-transform: uppercase;
+            color: indigo;
+            text-align: center;
+            
+            
+        }
+        .form{
+            position: relative;
+            
+        }
+        .inputs{
+            border-radius: 5px;
+            width: 100%;
+            padding: 8px;
+            border: 2px solid #ccc;
+            margin: 1px;
+        }
+        .container{
+            border: 5px solid black;
+            border-radius: 15px;
+            margin-left: 10px;
+            margin-right: 10px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-100vh);
+            animation: slidein 1s ease-out forwards;
+            background-color: rgb(23, 112, 112);
+        }
+        .button1{
+            width: 100%;
+            padding: 5px;
+            border-radius: 4px;
+            color: #fff;
+            background-color: indigo;
+            font-size: 16px;
+            
+        }
+        .button1:hover{
+            background-color: rgb(110, 92, 121);
+        }
+        .backToLoginPage{
+            margin: 5px;
+            padding: 5px;
+            border-radius: 4px;
+            color: #fff;
+            background-color: rgb(15, 90, 175);
+            font-size: 16px;
+
+        }
+        .backToLoginPage:hover{
+            background-color: #1f3247;
+        }
+        .checkbox{
+                 margin-left: 5px;
+        }
+        .heading{
+            top: 0;
+            text-transform: uppercase;
+            color: indigo;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        @keyframes slidein {
+            from{
+                transform: translateY(-100vh);
+            }
+            to{
+                transform: translateY(0); 
+            }
+            
+        }
+
+        /* dashboard*/
+        .weather-dashboard {
+  background-color: rgb(28, 189, 63);
+  padding: 20px;
+  margin: 5px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 1000px;
+  height: 100%;
+  width: 100%;
+ }
+
+ .weather-dashboard h1 {
+  margin-bottom: 20px;
+  color:red;
+ }
+
+ .search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+ }
+
+ .search input {
+  padding: 10px;
+  width: 60%;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+ }
+
+ .search button {
+  padding: 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+ }
+ .forecast-button {
+  padding: 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 0 4px 4px 0;
+  margin-left: 100px;
+  margin-bottom: 10px;
+  cursor: pointer;
+ }
+ .forecast-button:hover{
+    background-color: aqua;
+ }
+
+ .search button:hover {
+  background-color: #0056b3;
+ }
+
+ .weather-section {
+  margin-top: 20px;
+  text-align: left;
+ }
+
+ .weather-section h2 {
+  background-color: #a7680b;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+ }
+
+ .weather-section div {
+  padding: 15px;
+  background-color: #f0f8ff;
+  border-radius: 4px;
+ }
+
+ .weather-section div:not(:last-child) {
+  margin-bottom: 20px;
+ }
+
+ .weather-section img {
+  width: 50px;
+  vertical-align: middle;
+ }
+
+ #forecast-info .forecast-day {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+ }
+
+ #additional-info p {
+  margin: 10px 0;
+ }
+ footer{
+   position: fixed;
+   font-family: impact;
+   margin-left: 50px;
+   margin-bottom: 5px;
+   width: 100%;
+   bottom: 0;
+   font-style: italic;
+   text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+ }
+    </style>
+</head>
+<body>
+<div id="welcomepage">
+    <h3 class="heading">welcome to my weather_dashboard</h3>
+<div class="container">
+    <div class="spiner"></div>
+    <div class="form">
+        <fieldset>
+            <legend><h3>sign in</h3></legend>
+        <input type="text" class="inputs" placeholder="Enter username">
+        <br>
+        <br>
+        <input type="password" class="inputs" id="pwd" placeholder="Enter password">
+        <input class="checkbox" id="checkbox" type="checkbox" value="1">
+         <label class="label" for="checkbox">Show password</label>
+        <br> 
+        <br>
+        <button class="button1" id="login">Login</button>
+    </fieldset>
+    </div>
+    <div class="spiner"></div>
+</div>
+</div>
+
+<div id="weather-dashboard" class="weather-dashboard">
+    <h1>Weather Dashboard</h1>
+    <div class="search">
+    <input type="text" id="city-input" placeholder="Enter city name">
+    <button id="search-btn">Search</button>
+    </div>
+   
+    <!-- Current Weather Section -->
+    <div class="weather-section" id="current-weather">
+    <h2>Current Weather</h2>
+    <div id="current-weather-info">
+     <!-- Current weather data will be inserted here by JavaScript -->
+    </div>
+    </div>
+   
+    <!-- Weather Forecast Section -->
+    <div class="weather-section" id="weather-forecast">
+    <h2>Weather Forecast</h2>
+         <button class="forecast-button " id="displayforecast">Display Forecast</button>
+    <div id="forecast-info">
+     <!-- Forecast data will be inserted here by JavaScript -->
+    </div>
+    </div>
+   
+    <!-- Additional Information Section -->
+    <div class="weather-section" id="additional-info">
+    <h2>Additional Information</h2>
+    <div id="additional-info-details">
+     <!-- Additional weather data will be inserted here by JavaScript -->
+    </div>
+    </div>
+    <button class="backToLoginPage" id="backToLoginPage">Back To Login</button>
+   </div>
+         
+   <br>
+   
+   <footer>Developed by Khulekani Cebekhulu </footer>
+
+ <script>
+    const pwd = document.getElementById('pwd');
+    const checkbox = document.getElementById('checkbox');
+    const WelcomePage = document.getElementById('welcomepage');
+    const loginButton = document.getElementById('login');
+    const backToLoginPage = document.getElementById('backToLoginPage');
+    const weatherdashboard = document.getElementById('weather-dashboard');
+    weatherdashboard.style.display = 'none';
+
+    checkbox.onchange = function(e) {
+        pwd.type = checkbox.checked ? "text" : "password";
+    };
+
+    document.getElementById('search-btn').addEventListener('click', function() {
+    const city = document.getElementById('city-input').value;
+    if (city) {
+      getWeather(city);
+     }
+       });
+    
+     loginButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        WelcomePage.style.display = 'none';
+        weatherdashboard.style.display = 'block';
+     })
+     backToLoginPage.addEventListener('click', (e) => {
+        WelcomePage.style.display = 'block';
+        weatherdashboard.style.display = 'none';
+     })
+
+     function getWeather(city) {
+        const apiKey = '4edc202e3c13612ba8da03e03e535c34'; // Replace with your OpenWeatherMap API key
+        const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+        const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`;
+
+ // Fetch current weather
+ fetch(weatherUrl)
+  .then(response => response.json())
+  .then(data => displayCurrentWeather(data))
+  .catch(error => {
+  document.getElementById('current-weather-info').innerHTML = '<p>City not found.</p>';
+  });
+
+ // Fetch weather forecast
+ fetch(forecastUrl)
+  .then(response => response.json())
+  .then(data => displayForecast(data))
+  .catch(error => {
+  document.getElementById('forecast-info').innerHTML = '<p>Could not retrieve forecast data.</p>';
+  });
+ }
+
+ function displayCurrentWeather(data) {
+ const currentWeatherInfo = document.getElementById('current-weather-info');
+ const icon = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+
+ currentWeatherInfo.innerHTML = `
+  <h3>${data.name}, ${data.sys.country}</h3>
+  <p><img src="${icon}" alt="${data.weather[0].description}"> ${data.main.temp}°C - ${data.weather[0].description}</p>
+  <p><strong>Feels like:</strong> ${data.main.feels_like}°C</p>
+ `;
+
+ displayAdditionalInfo(data);
+ }
+
+
+    function displayForecast(data) {
+    const forecastInfo = document.getElementById('forecast-info');
+    forecastInfo.innerHTML = '';
+
+    // Get a list of forecasts at 12:00 PM for the next 5 days
+    const forecasts = data.list.filter(item => item.dt_txt.includes("12:00:00"));
+
+    forecasts.forEach(forecast => {
+    const icon = `http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`;
+
+  forecastInfo.innerHTML += `
+  <div class="forecast-day">
+   <div><strong>${new Date(forecast.dt_txt).toLocaleDateString()}</strong></div>
+   <div><img src="${icon}" alt="${forecast.weather[0].description}"> ${forecast.main.temp}°C</div>
+   <div>${forecast.weather[0].description}</div>
+  </div>
+  `;
+ });
+ }
+
+ function displayAdditionalInfo(data) {
+ const additionalInfoDetails = document.getElementById('additional-info-details');
+
+ additionalInfoDetails.innerHTML = `
+  <p><strong>Humidity:</strong> ${data.main.humidity}%</p>
+  <p><strong>Wind Speed:</strong> ${data.wind.speed} m/s</p>
+  <p><strong>Pressure:</strong> ${data.main.pressure} hPa</p>
+  <p><strong>Visibility:</strong> ${data.visibility / 1000} km</p>
+ `;
+ }
+ </script>
+</body>
+</html>
